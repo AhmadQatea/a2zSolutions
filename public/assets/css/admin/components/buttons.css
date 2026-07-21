@@ -1,0 +1,71 @@
+.adm-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--adm-radius);
+    border: 1px solid transparent;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
+    white-space: nowrap;
+}
+
+.adm-btn--sm {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8125rem;
+}
+
+.adm-btn--full {
+    width: 100%;
+}
+
+.adm-btn--gold {
+    background: linear-gradient(135deg, var(--adm-secondary) 0%, var(--adm-secondary-container) 100%);
+    color: var(--adm-on-secondary);
+    border-color: rgba(236, 194, 70, 0.4);
+    font-weight: 700;
+}
+
+.adm-btn--gold:hover {
+    filter: brightness(1.08);
+}
+
+.adm-btn--outline {
+    background: transparent;
+    color: var(--adm-primary-bright);
+    border-color: rgba(155, 204, 241, 0.45);
+}
+
+.adm-btn--outline:hover {
+    background: rgba(155, 204, 241, 0.12);
+    color: var(--adm-on-surface);
+}
+
+.adm-btn--ghost {
+    background: transparent;
+    color: var(--adm-on-surface-variant);
+    border-color: transparent;
+}
+
+.adm-btn--ghost:hover {
+    background: var(--adm-surface-highest);
+    color: var(--adm-on-surface);
+}
+
+.adm-btn--icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    background: var(--adm-surface-high);
+    color: var(--adm-on-surface);
+    border-color: var(--adm-outline-variant);
+}
+
+.adm-btn--icon:hover {
+    background: var(--adm-surface-highest);
+}

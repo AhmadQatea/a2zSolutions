@@ -1,0 +1,116 @@
+@keyframes adm-gold-texture-shift {
+    0%,
+    100% {
+        background-position: 35% 50%;
+        background-size: 180% auto;
+    }
+
+    50% {
+        background-position: 65% 50%;
+        background-size: 210% auto;
+    }
+}
+
+@keyframes adm-gold-shine-sweep {
+    0% { transform: translateX(-160%) skewX(-20deg); }
+    100% { transform: translateX(260%) skewX(-20deg); }
+}
+
+/* جميع الأيقونات ذهبية — خلفية النص شفافة دائماً */
+
+.adm-shell .material-symbols-outlined,
+.adm-sidebar-toggle .material-symbols-outlined,
+.adm-auth .material-symbols-outlined {
+    background-color: transparent;
+    background-image: var(--adm-gold-texture);
+    background-repeat: no-repeat;
+    background-size: 180% auto;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: adm-gold-texture-shift 4s ease-in-out infinite;
+}
+
+.adm-btn--gold .material-symbols-outlined {
+    background: none;
+    background-color: transparent;
+    background-image: none;
+    color: var(--adm-on-secondary);
+    -webkit-text-fill-color: var(--adm-on-secondary);
+    animation: none;
+}
+
+.adm-auth .adm-password-toggle .material-symbols-outlined {
+    background: none;
+    background-color: transparent;
+    background-image: none;
+    color: var(--adm-secondary);
+    -webkit-text-fill-color: var(--adm-secondary);
+    animation: none;
+}
+
+.adm-icon--gold,
+.adm-icon--navy,
+.adm-icon--teal,
+.adm-stat .adm-stat__icon,
+.adm-table__icon {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.adm-icon--gold::after,
+.adm-icon--navy::after,
+.adm-icon--teal::after,
+.adm-stat .adm-stat__icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.12) 45%,
+        rgba(255, 255, 255, 0.28) 50%,
+        rgba(255, 255, 255, 0.12) 55%,
+        transparent 100%
+    );
+    transform: translateX(-160%) skewX(-20deg);
+    animation: adm-gold-shine-sweep 2.8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.adm-icon .material-symbols-outlined,
+.adm-stat .adm-stat__icon .material-symbols-outlined {
+    position: relative;
+    z-index: 2;
+}
+
+.adm-icon--gold {
+    background: rgba(236, 194, 70, 0.14);
+    border: 1px solid rgba(236, 194, 70, 0.35);
+}
+
+.adm-icon--navy {
+    background: rgba(0, 67, 98, 0.55);
+    border: 1px solid rgba(155, 204, 241, 0.28);
+}
+
+.adm-icon--teal {
+    background: rgba(14, 165, 183, 0.2);
+    border: 1px solid rgba(14, 165, 183, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .adm-shell .material-symbols-outlined,
+    .adm-sidebar-toggle .material-symbols-outlined,
+    .adm-auth .material-symbols-outlined,
+    .adm-icon--gold::after,
+    .adm-icon--navy::after,
+    .adm-icon--teal::after,
+    .adm-stat .adm-stat__icon::after {
+        animation: none;
+    }
+}

@@ -1,0 +1,58 @@
+/* سكرول مخصص — يطبق على كل المناطق القابلة للتمرير */
+
+.adm-scrollbar,
+.adm-sidebar__nav,
+.adm-body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--adm-secondary) rgba(15, 23, 42, 0.45);
+}
+
+.adm-scrollbar::-webkit-scrollbar,
+.adm-sidebar__nav::-webkit-scrollbar,
+.adm-body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.adm-scrollbar::-webkit-scrollbar-track,
+.adm-sidebar__nav::-webkit-scrollbar-track,
+.adm-body::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.45);
+    border-radius: 10px;
+}
+
+.adm-scrollbar::-webkit-scrollbar-thumb,
+.adm-sidebar__nav::-webkit-scrollbar-thumb,
+.adm-body::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        var(--adm-secondary) 0%,
+        var(--adm-secondary-container) 100%
+    );
+    border-radius: 10px;
+    border: 2px solid rgba(15, 23, 42, 0.45);
+}
+
+.adm-scrollbar::-webkit-scrollbar-thumb:hover,
+.adm-sidebar__nav::-webkit-scrollbar-thumb:hover,
+.adm-body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg,
+        #f0d060 0%,
+        var(--adm-secondary) 100%
+    );
+}
+
+.adm-scrollbar::-webkit-scrollbar-button,
+.adm-sidebar__nav::-webkit-scrollbar-button,
+.adm-body::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.adm-scrollbar::-webkit-scrollbar-corner,
+.adm-sidebar__nav::-webkit-scrollbar-corner,
+.adm-body::-webkit-scrollbar-corner {
+    background: transparent;
+}

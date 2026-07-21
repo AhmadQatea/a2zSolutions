@@ -1,0 +1,88 @@
+﻿/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.a2z-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: var(--a2z-radius-md);
+    font-family: var(--a2z-font);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--a2z-transition);
+}
+
+.a2z-btn--sm {
+    padding: 8px 24px;
+}
+
+.a2z-btn--lg {
+    padding: 16px 40px;
+}
+
+.a2z-btn--gold {
+    color: var(--a2z-brand-navy);
+}
+
+.a2z-btn--gold:hover {
+    filter: brightness(1.05);
+}
+
+.a2z-btn--navy {
+    background-color: var(--a2z-brand-navy);
+    color: var(--a2z-white);
+}
+
+.a2z-btn--navy:hover {
+    opacity: 0.8;
+}
+
+.a2z-btn--outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--a2z-white);
+}
+
+.a2z-btn--outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.a2z-btn--outline-navy {
+    padding: 0;
+    background: var(--a2z-brand-navy);
+    border: none;
+    border-radius: 0;
+    color: var(--a2z-brand-teal);
+    padding: 6px;
+    border-radius: var(--a2z-radius-md);
+}
+
+.a2z-btn--outline-navy:hover {
+    background-color: transparent;
+}
+
+.a2z-btn--outline-teal {
+    background: transparent;
+    border: 1px solid var(--a2z-brand-teal);
+    color: var(--a2z-brand-teal);
+}
+
+.a2z-btn--outline-teal:hover {
+    background: rgba(14, 165, 183, 0.08);
+}
+
+.a2z-btn--cta {
+    color: var(--a2z-brand-navy);
+}
+
+.a2z-btn--cta:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,119 @@
+﻿/* --------------------------------------------------------------------------
+   Projects
+   -------------------------------------------------------------------------- */
+
+.a2z-projects {
+    padding: 96px 0;
+    background: var(--a2z-white);
+}
+
+.a2z-projects__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 64px;
+}
+
+.a2z-projects__title {
+    margin: 0;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 500;
+    color: var(--a2z-brand-navy);
+}
+
+.a2z-projects__description {
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--a2z-on-surface-variant);
+}
+
+.a2z-projects__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--a2z-gutter);
+}
+
+@media (min-width: 768px) {
+    .a2z-projects__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .a2z-projects__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.a2z-project-card {
+    position: relative;
+    height: 384px;
+    overflow: hidden;
+    border-radius: var(--a2z-radius-xl);
+    border: 1px solid rgba(198, 198, 205, 0.3);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.a2z-project-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.a2z-project-card:hover .a2z-project-card__image {
+    transform: scale(1.05);
+}
+
+.a2z-project-card__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px;
+    color: var(--a2z-white);
+    background: linear-gradient(to top, rgba(0, 67, 98, 0.9), rgba(0, 67, 98, 0.4), transparent);
+    transform: translateY(16px);
+    transition: transform var(--a2z-transition);
+}
+
+.a2z-project-card:hover .a2z-project-card__overlay {
+    transform: translateY(0);
+}
+
+.a2z-project-card__category {
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.a2z-project-card__category--gold {
+    display: inline-block;
+}
+
+.a2z-project-card__category--teal {
+    color: var(--a2z-brand-teal);
+}
+
+.a2z-project-card__title {
+    margin: 0 0 12px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.a2z-project-card__description {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    opacity: 0;
+    transition: opacity var(--a2z-transition) 0.1s;
+}
+
+.a2z-project-card:hover .a2z-project-card__description {
+    opacity: 1;
+}

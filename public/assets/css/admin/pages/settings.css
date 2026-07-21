@@ -1,0 +1,116 @@
+.adm-settings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.adm-settings-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.adm-upload-preview {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem;
+    background: var(--adm-surface);
+    border: 1px solid var(--adm-outline-variant);
+    border-radius: var(--adm-radius);
+}
+
+.adm-upload-preview img {
+    width: 4rem;
+    height: 3rem;
+    object-fit: contain;
+    border-radius: 0.25rem;
+    background: var(--adm-surface-high);
+    flex-shrink: 0;
+}
+
+.adm-upload-preview > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.adm-upload-preview strong {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--adm-on-surface);
+}
+
+.adm-upload-preview span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--adm-on-surface-variant);
+    margin-top: 0.15rem;
+}
+
+.adm-upload-preview--pattern .adm-upload-preview__pattern {
+    width: 4rem;
+    height: 3rem;
+    border-radius: 0.25rem;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.adm-social-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.adm-social-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--adm-surface);
+    border: 1px solid var(--adm-outline-variant);
+    border-radius: var(--adm-radius);
+}
+
+.adm-social-item__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.adm-social-item__info strong {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--adm-on-surface);
+}
+
+.adm-social-item__info a {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--adm-primary);
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 0.15rem;
+}
+
+.adm-settings-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.adm-settings-footer__note {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--adm-on-surface-variant);
+}
+
+@media (max-width: 900px) {
+    .adm-settings-grid {
+        grid-template-columns: 1fr;
+    }
+}

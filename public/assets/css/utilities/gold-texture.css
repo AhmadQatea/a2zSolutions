@@ -1,0 +1,145 @@
+﻿/* --------------------------------------------------------------------------
+   Gold texture (gold.jpg)
+   -------------------------------------------------------------------------- */
+
+@keyframes a2z-gold-texture-shift {
+    0%,
+    100% {
+        background-position: 35% 50%;
+        background-size: 180% auto;
+    }
+
+    50% {
+        background-position: 65% 50%;
+        background-size: 210% auto;
+    }
+}
+
+@keyframes a2z-gold-texture-bg-shift {
+    0%,
+    100% {
+        background-position: center center;
+    }
+
+    50% {
+        background-position: 58% 42%;
+    }
+}
+
+@keyframes a2z-gold-shine-sweep {
+    0% { transform: translateX(-160%) skewX(-20deg); }
+    100% { transform: translateX(260%) skewX(-20deg); }
+}
+
+.a2z-gold-shine-text,
+.a2z-brand__letter,
+.a2z-footer__brand .a2z-brand__letter,
+.a2z-hero__title-highlight,
+.a2z-cta__title-highlight,
+.a2z-header__nav-link--active,
+.a2z-icon--gold,
+.a2z-project-card__category--gold,
+.a2z-hero__badge,
+.a2z-hero__stat-icon .a2z-icon,
+.a2z-service-card__icon--navy .a2z-icon,
+.text-brand-gold,
+.a2z-btn--outline-navy:hover,
+.a2z-services-swiper__slide--active .a2z-service-card__link {
+    background-color: transparent;
+    background-image: var(--a2z-gold-texture);
+    background-repeat: no-repeat;
+    background-size: 180% auto;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: a2z-gold-texture-shift 4s ease-in-out infinite;
+    /* padding: 30px 0; */
+}
+
+.a2z-gold-shine-bg,
+.a2z-btn--gold,
+.a2z-btn--cta,
+.a2z-service-card__icon--gold,
+.a2z-why__stat-small--gold,
+.a2z-footer__social-link:hover {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: #a67c00;
+    background-image: var(--a2z-gold-texture);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: a2z-gold-texture-bg-shift 5s ease-in-out infinite;
+}
+
+.a2z-gold-shine-bg::after,
+.a2z-btn--gold::after,
+.a2z-btn--cta::after,
+.a2z-service-card__icon--gold::after,
+.a2z-why__stat-small--gold::after,
+.a2z-footer__social-link:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 30%,
+        rgba(255, 255, 255, 0.65) 50%,
+        rgba(255, 255, 255, 0.2) 70%,
+        transparent 100%
+    );
+    transform: translateX(-160%) skewX(-20deg);
+    animation: a2z-gold-shine-sweep 2.8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.a2z-btn--gold,
+.a2z-btn--cta,
+.a2z-service-card__icon--gold {
+    z-index: 0;
+}
+
+.a2z-btn--gold > *,
+.a2z-btn--cta > * {
+    position: relative;
+    z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .a2z-gold-shine-text,
+    .a2z-brand__letter,
+    .a2z-footer__brand .a2z-brand__letter,
+    .a2z-hero__title-highlight,
+    .a2z-cta__title-highlight,
+    .a2z-header__nav-link--active,
+    .a2z-icon--gold,
+    .a2z-project-card__category--gold,
+    .a2z-hero__badge,
+    .a2z-hero__stat-icon .a2z-icon,
+    .a2z-service-card__icon--navy .a2z-icon,
+    .text-brand-gold,
+    .a2z-btn--outline-navy:hover,
+    .a2z-services-swiper__slide--active .a2z-service-card__link,
+    .a2z-gold-shine-bg,
+    .a2z-btn--gold,
+    .a2z-btn--cta,
+    .a2z-service-card__icon--gold,
+    .a2z-why__stat-small--gold,
+    .a2z-footer__social-link:hover,
+    .a2z-gold-shine-bg::after,
+    .a2z-btn--gold::after,
+    .a2z-btn--cta::after,
+    .a2z-service-card__icon--gold::after,
+    .a2z-why__stat-small--gold::after,
+    .a2z-footer__social-link:hover::after {
+        animation: none;
+    }
+}

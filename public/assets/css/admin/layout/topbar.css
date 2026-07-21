@@ -1,0 +1,32 @@
+.adm-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 3.5rem 1.25rem 2rem;
+    background: rgba(11, 19, 38, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--adm-outline-variant);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.adm-topbar__title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--adm-on-surface);
+}
+
+.adm-topbar__desc {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: var(--adm-on-surface-muted);
+}
+
+.adm-topbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

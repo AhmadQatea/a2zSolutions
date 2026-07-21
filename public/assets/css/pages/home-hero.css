@@ -1,0 +1,199 @@
+﻿/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
+.a2z-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    margin-top: -25px;
+    padding: 25px 0;
+    overflow: hidden;
+    color: var(--a2z-white);
+    background-image: url('/assets/images/mvpd.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--a2z-radius-xl);
+    isolation: isolate;
+}
+
+/* .a2z-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(0, 67, 98, 0);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    pointer-events: none;
+} */
+
+.a2z-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--a2z-gutter);
+    width: 100%;
+    max-width: var(--a2z-container-max);
+    margin: 0 auto;
+    padding: 0 var(--a2z-margin-mobile);
+}
+
+@media (min-width: 768px) {
+    .a2z-hero__inner {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 var(--a2z-margin-desktop);
+    }
+}
+
+.a2z-hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.a2z-hero__badge {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 16px;
+    border-radius: 9999px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    background-color: rgba(201, 162, 39, 0.14);
+    border: 1px solid rgba(201, 162, 39, 0.35);
+}
+
+.a2z-hero__title {
+    margin: 0;
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.a2z-hero__title-highlight {
+    display: inline-block;
+}
+
+.a2z-hero__description {
+    margin: 0;
+    max-width: 32rem;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--a2z-gray-300);
+}
+
+.a2z-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 16px;
+}
+
+.a2z-hero__media {
+    display: none;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .a2z-hero__media {
+        display: block;
+    }
+
+    .a2z-hero__title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 767px) {
+    .a2z-hero__title {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+.a2z-hero__image-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 480px;
+    overflow: hidden;
+
+
+}
+
+.a2z-hero__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 560px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: var(--a2z-radius-xl);
+    animation: a2z-hero-float 4s ease-in-out infinite;
+}
+
+@keyframes a2z-hero-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-16px);
+    }
+}
+
+.a2z-hero__image-overlay {
+    display: none;
+
+}
+
+.a2z-hero__stat-card {
+    position: absolute;
+    bottom: -24px;
+    right: -24px;
+    padding: 24px;
+    border-radius: var(--a2z-radius-xl);
+    border: 1px solid rgba(198, 198, 205, 0.3);
+    background: var(--a2z-white);
+    color: var(--a2z-brand-navy);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    animation: a2z-hero-float 4s ease-in-out infinite;
+}
+
+.a2z-hero__stat-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.a2z-hero__stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(201, 162, 39, 0.15);
+}
+
+.a2z-hero__stat-value {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.a2z-hero__stat-label {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--a2z-on-surface-variant);
+}

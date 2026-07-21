@@ -1,0 +1,54 @@
+.adm-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.adm-service-card__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.adm-service-card__title {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--adm-on-surface);
+    line-height: 1.4;
+}
+
+.adm-service-card__desc {
+    margin: 0 0 1rem;
+    font-size: 0.8125rem;
+    color: var(--adm-on-surface-variant);
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.adm-service-card__actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.adm-service-card.is-hidden {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .adm-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .adm-services-grid {
+        grid-template-columns: 1fr;
+    }
+}

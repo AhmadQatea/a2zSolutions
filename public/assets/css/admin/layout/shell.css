@@ -1,0 +1,71 @@
+.adm-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+.adm-main {
+    flex: 1;
+    margin-right: var(--adm-sidebar-width);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 0;
+    transition: margin-right 0.25s ease;
+}
+
+.adm-shell.is-sidebar-closed .adm-main {
+    margin-right: 0;
+}
+
+.adm-content {
+    flex: 1;
+    padding: 1.5rem 2rem 2.5rem;
+    overflow-y: auto;
+}
+
+.adm-sidebar-toggle {
+    position: fixed;
+    top: 1.25rem;
+    right: var(--adm-sidebar-width);
+    z-index: 60;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--adm-radius);
+    border: 1px solid var(--adm-outline-variant);
+    background: var(--adm-surface-high);
+    color: var(--adm-on-surface);
+    cursor: pointer;
+    transition: right 0.25s ease, background 0.2s, color 0.2s;
+    padding: 0;
+}
+
+.adm-sidebar-toggle:hover {
+    background: var(--adm-surface-highest);
+    color: var(--adm-secondary);
+}
+
+.adm-shell.is-sidebar-closed .adm-sidebar-toggle {
+    right: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+    .adm-main {
+        margin-right: 0;
+    }
+
+    .adm-content {
+        padding: 1rem 1.25rem 2rem;
+    }
+
+    .adm-sidebar-toggle {
+        top: 1rem;
+        right: 0.75rem;
+    }
+
+    .adm-shell:not(.is-sidebar-closed) .adm-sidebar-toggle {
+        right: calc(var(--adm-sidebar-width) + 0.5rem);
+    }
+}

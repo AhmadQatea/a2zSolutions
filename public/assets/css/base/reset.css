@@ -1,0 +1,32 @@
+﻿/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body.a2z-body {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    font-family: var(--a2z-font);
+    background-color: var(--a2z-background);
+    color: var(--a2z-on-surface);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    min-height: 100vh;
+    min-height: 100dvh;
+    flex-direction: column;
+}
+
+.a2z-icon {
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    line-height: 1;
+}
+
+.a2z-icon--sm { font-size: 14px; }
+.a2z-icon--lg { font-size: 36px; }
+.a2z-icon--teal { color: var(--a2z-brand-teal); }

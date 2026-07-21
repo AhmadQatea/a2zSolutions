@@ -1,0 +1,40 @@
+:root {
+    /* Stitch / DevCMS tokens */
+    --adm-bg: #0b1326;
+    --adm-bg-low: #060e20;
+    --adm-surface: #171f33;
+    --adm-surface-low: #131b2e;
+    --adm-surface-high: #222a3d;
+    --adm-surface-highest: #2d3449;
+    --adm-surface-variant: #2d3449;
+    --adm-surface-bright: #31394d;
+    --adm-outline: #8b9198;
+    --adm-outline-variant: #41484d;
+
+    /* نصوص بتباين أعلى */
+    --adm-on-bg: #eaf0ff;
+    --adm-on-surface: #f0f4fd;
+    --adm-on-surface-variant: #d4dbe8;
+    --adm-on-surface-muted: #bcc7de;
+
+    --adm-primary: #9bccf1;
+    --adm-primary-bright: #c8e6ff;
+    --adm-primary-container: #004362;
+    --adm-secondary: #ecc246;
+    --adm-secondary-bright: #ffe08e;
+    --adm-secondary-container: #b18c09;
+    --adm-on-secondary: #3d2e00;
+    --adm-tertiary: #bcc7de;
+    --adm-success: #6ee7a0;
+    --adm-error: #ffb4ab;
+    --adm-gold: #ecc246;
+    --adm-navy: #0f172a;
+    --adm-teal: #0ea5b7;
+    --adm-sidebar-width: 280px;
+    --adm-radius: 0.5rem;
+    --adm-radius-lg: 0.75rem;
+    --adm-font: 'IBM Plex Sans Arabic', 'IBM Plex Sans', 'Tajawal', sans-serif;
+    --adm-shadow-glow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+    --adm-glass: rgba(30, 41, 59, 0.82);
+    --adm-gold-texture: url('/assets/images/gold.jpg');
+}

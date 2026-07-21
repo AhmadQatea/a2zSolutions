@@ -1,0 +1,155 @@
+/* --------------------------------------------------------------------------
+   Service card
+   -------------------------------------------------------------------------- */
+
+.a2z-service-card {
+    padding: 32px;
+    border-radius: var(--a2z-radius-xl);
+    border: 1px solid rgba(198, 198, 205, 0.3);
+    background: var(--a2z-surface-container-low);
+    transition: transform var(--a2z-transition), box-shadow var(--a2z-transition);
+}
+
+.a2z-service-card:hover {
+    transform: translateY(-4px);
+}
+
+.a2z-service-card--hidden {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.a2z-service-card--visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.a2z-service-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 24px;
+    border-radius: var(--a2z-radius-md);
+    font-size: 30px;
+    transition: transform var(--a2z-transition);
+}
+
+.a2z-service-card:hover .a2z-service-card__icon {
+    transform: scale(1.1);
+}
+
+.a2z-service-card__icon--navy {
+    background: var(--a2z-brand-navy);
+}
+
+.a2z-service-card__icon--navy .a2z-icon {
+    display: inline-block;
+}
+
+.a2z-service-card__icon--teal {
+    background: var(--a2z-brand-teal);
+    color: var(--a2z-white);
+}
+
+.a2z-service-card__icon--gold {
+    color: var(--a2z-brand-navy);
+}
+
+.a2z-service-card__icon--gold .a2z-icon {
+    position: relative;
+    z-index: 2;
+}
+
+.a2z-service-card__title {
+    margin: 0 0 12px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    color: var(--a2z-brand-navy);
+}
+
+.a2z-service-card__description {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--a2z-on-surface-variant);
+}
+
+.a2z-service-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: var(--a2z-brand-teal);
+    text-decoration: none;
+}
+
+.a2z-service-card__link:hover {
+    text-decoration: underline;
+}
+
+.a2z-service-card--swiper {
+    height: 100%;
+    padding: 22px;
+    background: var(--a2z-white);
+    box-shadow:
+        0 16px 32px rgba(15, 23, 42, 0.1),
+        0 6px 14px rgba(15, 23, 42, 0.05);
+}
+
+.a2z-services-swiper__slide--active .a2z-service-card--swiper {
+    background: var(--a2z-brand-slate);
+    border-color: rgba(255, 255, 255, 0.14);
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    text-rendering: optimizeLegibility;
+}
+
+.a2z-services-swiper__slide--active .a2z-service-card__title {
+    color: var(--a2z-white);
+}
+
+.a2z-services-swiper__slide--active .a2z-service-card__description {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.a2z-services-swiper__slide--active .a2z-service-card__icon--navy {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.a2z-services-swiper__slide--active .a2z-service-card__icon--navy .a2z-icon {
+    color: var(--a2z-white);
+}
+
+.a2z-service-card--swiper .a2z-service-card__icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+    font-size: 24px;
+}
+
+.a2z-service-card--swiper .a2z-service-card__title {
+    margin-bottom: 8px;
+    font-size: 17px;
+    line-height: 26px;
+}
+
+.a2z-service-card--swiper .a2z-service-card__description {
+    margin-bottom: 16px;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+.a2z-service-card--swiper .a2z-service-card__link {
+    font-size: 13px;
+}
+
+.a2z-service-card--swiper:hover {
+    transform: translateY(-4px);
+}

@@ -1,0 +1,42 @@
+﻿/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+
+.a2z-main {
+    flex: 1;
+}
+
+.a2z-main--offset {
+    padding-top: var(--a2z-header-height);
+}
+
+.a2z-container {
+    width: 100%;
+    max-width: var(--a2z-container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--a2z-margin-mobile);
+    padding-right: var(--a2z-margin-mobile);
+}
+
+.a2z-container--padded {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.a2z-container--flash {
+    padding-left: var(--a2z-margin-mobile);
+    padding-right: var(--a2z-margin-mobile);
+}
+
+@media (min-width: 768px) {
+    .a2z-container {
+        padding-left: var(--a2z-margin-desktop);
+        padding-right: var(--a2z-margin-desktop);
+    }
+
+    .a2z-container--flash {
+        padding-left: var(--a2z-margin-desktop);
+        padding-right: var(--a2z-margin-desktop);
+    }
+}

@@ -1,0 +1,37 @@
+﻿/* ==========================================================================
+   A2Z Solutions — Design Tokens
+   ========================================================================== */
+
+:root {
+    --a2z-brand-navy: #0f172a;
+    --a2z-brand-gold: #c9a227;
+    --a2z-gold-texture: url('/assets/images/gold.jpg');
+    --a2z-brand-teal: #0ea5b7;
+    --a2z-brand-slate: #004362;
+    --a2z-on-surface: #1e293b;
+    --a2z-on-surface-variant: #45464d;
+    --a2z-surface: #fcf8fa;
+    --a2z-background: #fcf8fa;
+    --a2z-surface-container-low: #f6f3f5;
+    --a2z-surface-container-lowest: #ffffff;
+    --a2z-outline-variant: #c6c6cd;
+    --a2z-primary-container: #004362;
+    --a2z-on-primary-fixed: #dae2fd;
+    --a2z-on-primary-fixed-variant: #bec6e0;
+    --a2z-secondary-fixed: #9af0ff;
+    --a2z-white: #ffffff;
+    --a2z-gray-300: #d1d5db;
+    --a2z-container-max: 1280px;
+    --a2z-margin-desktop: 48px;
+    --a2z-margin-mobile: 16px;
+    --a2z-gutter: 24px;
+    --a2z-header-height: 80px;
+    --a2z-font: 'Tajawal', sans-serif;
+    --a2z-radius-sm: 0.25rem;
+    --a2z-radius-md: 0.5rem;
+    --a2z-radius-lg: 0.75rem;
+    --a2z-radius-xl: 1rem;
+    --a2z-radius-2xl: 1.5rem;
+    --a2z-radius-3xl: 1.5rem;
+    --a2z-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
