@@ -17,8 +17,8 @@
 @endphp
 
 <title>{{ $pageTitle }}</title>
-<link rel="icon" href="{{ asset(config('seo.organization.logo')) }}" type="image/png">
-<link rel="apple-touch-icon" href="{{ asset(config('seo.organization.logo')) }}">
+<link rel="icon" href="{{ asset('assets/images/logo-icon.png') }}" type="image/png" sizes="256x256">
+<link rel="apple-touch-icon" href="{{ asset('assets/images/logo-icon.png') }}">
 <meta name="description" content="{{ $pageDescription }}">
 <meta name="keywords" content="{{ $keywords }}">
 <meta name="author" content="{{ $author }}">
@@ -69,10 +69,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
+<link rel="preload" href="{{ asset('assets/images/mvpd.webp') }}" as="image" type="image/webp">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-@vite(['resources/css/app.css', 'resources/js/app.js'])
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 

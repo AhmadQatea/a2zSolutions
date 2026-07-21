@@ -26,12 +26,27 @@
 
         <div class="a2z-hero__media">
             <div class="a2z-hero__image-wrap">
-                <x-ui.lazy-img
-                    :src="$hero['image']"
-                    :alt="$hero['image_alt']"
-                    class="a2z-hero__image"
-                    :eager="true"
-                />
+                <picture>
+                    <source
+                        media="(min-width: 768px)"
+                        srcset="{{ asset('assets/images/hero-image.webp') }}"
+                        type="image/webp"
+                    >
+                    <source
+                        media="(min-width: 768px)"
+                        srcset="{{ asset('assets/images/hero-image.jpg') }}"
+                        type="image/jpeg"
+                    >
+                    <img
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                        alt="{{ $hero['image_alt'] }}"
+                        class="a2z-hero__image"
+                        width="900"
+                        height="600"
+                        decoding="async"
+                        fetchpriority="low"
+                    >
+                </picture>
                 <div class="a2z-hero__image-overlay"></div>
             </div>
 

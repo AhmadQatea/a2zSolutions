@@ -22,7 +22,4 @@
 @import url('pages/home-why.css');
 @import url('pages/home-projects.css');
 @import url('pages/home-cta.css');
-@import url('pages/services-page.css');
-@import url('pages/projects-page.css');
-@import url('pages/contact-page.css');
-@import url('pages/knowledge-page.css');
+@import url('base/mobile-density.css');

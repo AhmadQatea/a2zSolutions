@@ -3,6 +3,10 @@
 @section('full_width')
 @endsection
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/projects-page.css') }}">
+@endpush
+
 @section('content')
     <div class="projects-page">
         <div class="projects-page__bg" aria-hidden="true"></div>

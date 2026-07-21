@@ -16,6 +16,8 @@ use App\Models\SocialLink;
 use App\Models\Tutorial;
 use App\Support\MediaPath;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
+use Throwable;
 
 class SiteDataService
 {
@@ -29,13 +31,21 @@ class SiteDataService
             return;
         }
 
-        $runtime = Cache::remember(self::CACHE_KEY, self::CACHE_TTL_SECONDS, function (): array {
-            if (! $this->databaseHasCmsData()) {
-                return [];
-            }
+        try {
+            $runtime = Cache::remember(self::CACHE_KEY, self::CACHE_TTL_SECONDS, function (): array {
+                if (! $this->databaseHasCmsData()) {
+                    return [];
+                }
 
-            return $this->buildSiteOverrides();
-        });
+                return $this->buildSiteOverrides();
+            });
+        } catch (Throwable $exception) {
+            Log::warning('CMS runtime config hydration failed; using static site config.', [
+                'exception' => $exception->getMessage(),
+            ]);
+
+            return;
+        }
 
         if ($runtime !== []) {
             config(['site' => array_replace_recursive(config('site'), $runtime)]);

@@ -3,6 +3,10 @@
 @section('full_width')
 @endsection
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/contact-page.css') }}">
+@endpush
+
 @section('content')
     <div class="contact-page">
         <x-contact.hero />

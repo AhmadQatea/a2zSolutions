@@ -13,7 +13,7 @@ return [
     'organization' => [
         'name' => 'A2Z Solutions',
         'url' => env('APP_URL', 'http://localhost:8000'),
-        'logo' => 'assets/images/logo.png',
+        'logo' => 'assets/images/og-default.jpg',
         'area_served' => 'سوريا والمنطقة',
         'address_locality' => 'كرباط، إدلب',
         'address_country' => 'SY',

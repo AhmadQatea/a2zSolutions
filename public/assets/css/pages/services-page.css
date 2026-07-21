@@ -193,7 +193,11 @@
     position: absolute;
     inset: -14px;
     z-index: 0;
-    background-image: url('/assets/images/mvpd.png');
+    background-image: url('/assets/images/mvpd.jpg');
+    background-image: image-set(
+        url('/assets/images/mvpd.webp') type('image/webp'),
+        url('/assets/images/mvpd.jpg') type('image/jpeg')
+    );
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

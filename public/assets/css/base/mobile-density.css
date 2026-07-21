@@ -1,0 +1,267 @@
+/* ==========================================================================
+   Mobile density — tighter spacing & type below 768px
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    :root {
+        --a2z-header-height: 60px;
+        --a2z-margin-mobile: 14px;
+        --a2z-gutter: 16px;
+        --a2z-section-pad-y: 48px;
+        --a2z-section-gap: 36px;
+    }
+
+    .a2z-scroll-progress {
+        height: 4px;
+    }
+
+    .a2z-body {
+        font-size: 15px;
+    }
+
+    .a2z-section-header--centered {
+        margin: 0 auto 36px;
+        gap: 10px;
+    }
+
+    .a2z-section-header__title {
+        font-size: 22px;
+        line-height: 1.35;
+    }
+
+    .a2z-section-header__description {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .a2z-services,
+    .a2z-why,
+    .a2z-projects {
+        padding: var(--a2z-section-pad-y) 0;
+    }
+
+    .a2z-cta {
+        padding: 40px 0;
+    }
+
+    .a2z-cta__box {
+        padding: 28px 18px;
+        border-radius: var(--a2z-radius-xl);
+    }
+
+    .a2z-cta__content {
+        gap: 20px;
+    }
+
+    .a2z-cta__title {
+        font-size: 24px;
+        line-height: 1.35;
+    }
+
+    .a2z-cta__description {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .a2z-cta__actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .a2z-cta__actions .a2z-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .a2z-hero {
+        margin-top: -12px;
+        padding: 18px 0;
+        border-radius: var(--a2z-radius-lg);
+    }
+
+    .a2z-hero__content {
+        gap: 14px;
+    }
+
+    .a2z-hero__badge {
+        padding: 3px 12px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .a2z-hero__title {
+        font-size: 26px;
+        line-height: 1.3;
+    }
+
+    .a2z-hero__description {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .a2z-hero__actions {
+        gap: 10px;
+        padding-top: 8px;
+    }
+
+    .a2z-hero__actions .a2z-btn {
+        flex: 1 1 auto;
+        min-height: 42px;
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .a2z-projects__header {
+        margin-bottom: 36px;
+    }
+
+    .a2z-project-card,
+    .services-bento__card,
+    .portfolio-card {
+        height: auto;
+        min-height: 220px;
+    }
+
+    .a2z-why__stat-large-value {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .services-hero,
+    .projects-hero {
+        padding: 48px 0;
+    }
+
+    .knowledge-hero {
+        padding: 56px 0 40px;
+    }
+
+    .contact-hero {
+        padding: 56px 0 36px;
+    }
+
+    .services-page__section,
+    .services-faq,
+    .services-cta,
+    .projects-page__section,
+    .knowledge-about,
+    .knowledge-blog,
+    .knowledge-tutorials,
+    .contact-section {
+        padding: var(--a2z-section-pad-y) 0;
+    }
+
+    .services-faq__header,
+    .knowledge-section__header {
+        margin-bottom: 36px;
+    }
+
+    .a2z-btn {
+        min-height: 42px;
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .a2z-brand__name {
+        font-size: 15px;
+    }
+
+    .a2z-brand__tagline {
+        font-size: 11px;
+    }
+
+    .a2z-footer {
+        padding: 40px 0 24px;
+    }
+
+    .a2z-footer__grid {
+        gap: 28px;
+    }
+
+    .a2z-header__nav-link {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .a2z-header__menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .a2z-service-card {
+        padding: 18px;
+    }
+
+    .a2z-service-card__title {
+        font-size: 16px;
+    }
+
+    .a2z-service-card__description {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .portfolio-grid,
+    .projects-portfolio,
+    .knowledge-blog__grid {
+        gap: 14px;
+    }
+
+    .bento-card__title,
+    .faq-item__question {
+        font-size: 15px;
+    }
+
+    .faq-item__answer,
+    .bento-card__description {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .contact-hero__title,
+    .services-hero__title,
+    .projects-hero__title,
+    .knowledge-hero__title {
+        font-size: 26px !important;
+        line-height: 1.3 !important;
+    }
+
+    .contact-hero__description,
+    .services-hero__description,
+    .projects-hero__description,
+    .knowledge-hero__description {
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+    }
+
+    /* Disable heavy gold motion on phones */
+    .a2z-gold-shine-text,
+    .a2z-brand__letter,
+    .a2z-footer__brand .a2z-brand__letter,
+    .a2z-hero__title-highlight,
+    .a2z-cta__title-highlight,
+    .a2z-header__nav-link--active,
+    .a2z-icon--gold,
+    .a2z-project-card__category--gold,
+    .a2z-hero__badge,
+    .a2z-hero__stat-icon .a2z-icon,
+    .a2z-service-card__icon--navy .a2z-icon,
+    .text-brand-gold,
+    .a2z-btn--outline-navy:hover,
+    .a2z-services-swiper__slide--active .a2z-service-card__link,
+    .a2z-gold-shine-bg,
+    .a2z-btn--gold,
+    .a2z-btn--cta,
+    .a2z-service-card__icon--gold,
+    .a2z-why__stat-small--gold,
+    .a2z-footer__social-link:hover,
+    .a2z-gold-shine-bg::after,
+    .a2z-btn--gold::after,
+    .a2z-btn--cta::after,
+    .a2z-service-card__icon--gold::after,
+    .a2z-why__stat-small--gold::after,
+    .a2z-footer__social-link:hover::after,
+    .a2z-hero__image {
+        animation: none !important;
+    }
+}

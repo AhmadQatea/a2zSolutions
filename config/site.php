@@ -81,7 +81,7 @@ return [
         'title_highlight' => 'الابتكار الرقمي',
         'title_suffix' => 'المتميز',
         'description' => 'نحن في A2Z Solutions نقدم حلولاً برمجية متكاملة تجمع بين الفخامة التقنية والدقة التنفيذية لدعم نمو مؤسستك في العصر الرقمي.',
-        'image' => 'assets/images/hero-image.png',
+        'image' => 'assets/images/hero-image.webp',
         'image_alt' => 'واجهة رقمية متقدمة تعرض تصورات بيانات معقدة وهياكل برمجية مستقبلية بألوان أزرق داكن وذهبي.',
         'stat' => [
             'value' => '+500',
@@ -353,7 +353,7 @@ return [
             ],
             [
                 'service_type' => 'hosting',
-                'image' => 'assets/images/hero-image.png',
+                'image' => 'assets/images/hero-image.webp',
                 'image_alt' => 'بنية سحابية آمنة لاستضافة المواقع والتطبيقات.',
                 'tags' => ['Cloud', 'SSL', 'CDN'],
                 'title' => 'بنية استضافة سحابية متكاملة',
@@ -600,7 +600,7 @@ return [
                 'description' => 'تحسين كفاءة سلاسل الإمداد باستخدام الذكاء الاصطناعي.',
             ],
             [
-                'image' => 'assets/images/hero-image.png',
+                'image' => 'assets/images/hero-image.webp',
                 'image_alt' => 'نظام سجلات طبية مستقبلي يعرض نماذج بيولوجية ثلاثية الأبعاد وبيانات المرضى.',
                 'category' => 'الرعاية الصحية',
                 'category_variant' => 'gold',
@@ -710,7 +710,7 @@ return [
             'description' => 'شركة سورية متخصصة في تطوير البرمجيات وتحليل النظم، نقدم حلولاً رقمية مخصصة للمؤسسات والشركات الناشئة في سوريا والمنطقة.',
             'mission' => 'تمكين الأعمال من التحول الرقمي عبر حلول برمجية موثوقة، قابلة للتوسع، ومصممة وفق احتياجات السوق المحلي.',
             'vision' => 'أن نكون الشريك التقني الأول للمؤسسات التي تسعى للابتكار والنمو في العصر الرقمي.',
-            'image' => 'assets/images/hero-image.png',
+            'image' => 'assets/images/hero-image.webp',
             'image_alt' => 'فريق A2Z Solutions يعمل على حلول برمجية متقدمة.',
             'values' => [
                 ['icon' => 'verified', 'title' => 'الجودة والدقة', 'description' => 'كل سطر كود يخضع لمعايير مراجعة صارمة.'],

@@ -6,6 +6,10 @@
 @section('without_flash')
 @endsection
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/knowledge-page.css') }}">
+@endpush
+
 @section('content')
     <div class="knowledge-page">
         <x-knowledge.hero />

@@ -11,7 +11,15 @@
     padding: 25px 0;
     overflow: hidden;
     color: var(--a2z-white);
-    background-image: url('/assets/images/mvpd.png');
+    background-image: url('/assets/images/mvpd.jpg');
+    background-image: -webkit-image-set(
+        url('/assets/images/mvpd.webp') type('image/webp'),
+        url('/assets/images/mvpd.jpg') type('image/jpeg')
+    );
+    background-image: image-set(
+        url('/assets/images/mvpd.webp') type('image/webp'),
+        url('/assets/images/mvpd.jpg') type('image/jpeg')
+    );
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

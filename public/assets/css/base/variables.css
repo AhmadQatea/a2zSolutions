@@ -6,6 +6,12 @@
     --a2z-brand-navy: #0f172a;
     --a2z-brand-gold: #c9a227;
     --a2z-gold-texture: url('/assets/images/gold.jpg');
+    --a2z-hero-bg: image-set(
+        url('/assets/images/mvpd.webp') type('image/webp'),
+        url('/assets/images/mvpd.jpg') type('image/jpeg')
+    );
+    --a2z-section-pad-y: 96px;
+    --a2z-section-gap: 64px;
     --a2z-brand-teal: #0ea5b7;
     --a2z-brand-slate: #004362;
     --a2z-on-surface: #1e293b;

@@ -33,7 +33,7 @@
                     <div class="adm-upload-preview__pattern" style="background-image: url('{{ asset(config('admin.brand.pattern')) }}');"></div>
                     <div>
                         <strong>خلفية النمط</strong>
-                        <span>mvpd.png — للـ Hero وCTA</span>
+                        <span>mvpd.jpg — للـ Hero وCTA</span>
                     </div>
                     <button type="button" class="adm-btn adm-btn--outline adm-btn--sm">تغيير</button>
                 </div>

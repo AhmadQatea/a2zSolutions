@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'لوحة التحكم') — {{ config('admin.brand.cms_name') }}</title>
-    <link rel="icon" href="{{ asset(config('admin.brand.logo')) }}" type="image/png">
-    <link rel="apple-touch-icon" href="{{ asset(config('admin.brand.logo')) }}">
+    <link rel="icon" href="{{ asset('assets/images/logo-icon.png') }}" type="image/png" sizes="256x256">
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/logo-icon.png') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

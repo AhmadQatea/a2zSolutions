@@ -6,6 +6,10 @@
 @section('without_flash')
 @endsection
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/services-page.css') }}">
+@endpush
+
 @section('content')
     <div class="services-page">
         <div class="services-page__bg" aria-hidden="true"></div>

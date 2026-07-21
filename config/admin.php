@@ -19,7 +19,7 @@ return [
         'tagline' => 'حلول تقنية متكاملة',
         'logo' => 'assets/images/logo.png',
         'logo_alt' => 'assets/images/logo2.png',
-        'pattern' => 'assets/images/mvpd.png',
+        'pattern' => 'assets/images/mvpd.jpg',
     ],
 
     'navigation' => [
