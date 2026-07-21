@@ -13,6 +13,7 @@
     padding: 120px 0 96px;
     text-align: center;
     isolation: isolate;
+    border-radius: var(--a2z-radius-xl);
 }
 
 .knowledge-hero__bg {
@@ -85,16 +86,35 @@
 
 .knowledge-nav__inner {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+}
+
+.knowledge-nav__inner::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .knowledge-nav__inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow: visible;
+        gap: 12px;
+    }
 }
 
 .knowledge-nav__link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 10px 16px;
     border-radius: 9999px;
     border: 1px solid var(--a2z-outline-variant);
     background: var(--a2z-white);

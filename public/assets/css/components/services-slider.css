@@ -4,7 +4,7 @@
 
 .a2z-services-swiper {
     position: relative;
-    margin-top: 48px;
+    margin-top: 40px;
     overflow: hidden;
     user-select: none;
     touch-action: pan-y;
@@ -13,7 +13,7 @@
 .a2z-services-swiper__viewport {
     position: relative;
     overflow: visible;
-    height: clamp(300px, 38vw, 380px);
+    height: clamp(280px, 58vw, 380px);
     perspective: 1400px;
     perspective-origin: 50% 42%;
 }
@@ -35,8 +35,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: min(84vw, 260px);
-    height: min(52vw, 280px);
+    width: min(78vw, 260px);
+    height: min(56vw, 280px);
     margin: 0;
     transform: translate(-50%, -50%);
     transform-style: preserve-3d;
@@ -47,7 +47,7 @@
     position: absolute;
     inset: 0;
     transform-style: preserve-3d;
-    opacity: 0.20;
+    opacity: 0.2;
     transition: opacity 0.55s ease, transform 0.55s ease, visibility 0.55s ease;
     pointer-events: none;
 }
@@ -73,26 +73,38 @@
     transform: translate3d(0, 0, 2px);
 }
 
-.a2z-services-swiper__controls {
+.a2z-services-swiper__controls--side {
+    display: none;
+}
+
+.a2z-services-swiper__nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.04);
+    border: 1px solid rgba(198, 198, 205, 0.35);
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
 }
 
 .a2z-services-swiper__btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
     border: 1px solid rgba(198, 198, 205, 0.45);
     border-radius: 50%;
     background: var(--a2z-white);
     color: var(--a2z-brand-navy);
     cursor: pointer;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
     transition:
         transform var(--a2z-transition),
         border-color var(--a2z-transition),
@@ -101,10 +113,9 @@
 }
 
 .a2z-services-swiper__btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     border-color: var(--a2z-brand-teal);
     color: var(--a2z-brand-teal);
-    box-shadow: 0 12px 28px rgba(14, 165, 183, 0.18);
 }
 
 .a2z-services-swiper__btn:focus-visible {
@@ -116,17 +127,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-top: 28px;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: min(58vw, 220px);
 }
 
 .a2z-services-swiper__dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     padding: 0;
     border: none;
     border-radius: 50%;
-    background: rgba(15, 23, 42, 0.18);
+    background: rgba(15, 23, 42, 0.22);
     cursor: pointer;
     transition:
         transform var(--a2z-transition),
@@ -135,7 +147,7 @@
 }
 
 .a2z-services-swiper__dot--active {
-    width: 28px;
+    width: 22px;
     border-radius: 999px;
     background: var(--a2z-brand-teal);
 }
@@ -146,17 +158,22 @@
 }
 
 @media (min-width: 768px) {
+    .a2z-services-swiper__viewport {
+        height: clamp(300px, 38vw, 380px);
+    }
+
     .a2z-services-swiper__track {
         width: 280px;
         height: 300px;
     }
 
-    .a2z-services-swiper__controls {
+    .a2z-services-swiper__controls--side {
         position: absolute;
         top: 50%;
         left: 0;
         right: 0;
         z-index: 3;
+        display: flex;
         justify-content: space-between;
         margin: 0;
         padding: 0 8px;
@@ -164,8 +181,36 @@
         pointer-events: none;
     }
 
-    .a2z-services-swiper__btn {
+    .a2z-services-swiper__controls--side .a2z-services-swiper__btn {
+        width: 52px;
+        height: 52px;
         pointer-events: auto;
+    }
+
+    .a2z-services-swiper__btn--mobile {
+        display: none;
+    }
+
+    .a2z-services-swiper__nav {
+        margin-top: 28px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        gap: 10px;
+    }
+
+    .a2z-services-swiper__pagination {
+        max-width: none;
+        gap: 10px;
+    }
+
+    .a2z-services-swiper__dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .a2z-services-swiper__dot--active {
+        width: 28px;
     }
 }
 

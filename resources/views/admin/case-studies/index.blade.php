@@ -8,10 +8,10 @@
 @section('content')
     <div class="adm-toolbar">
         <p class="adm-toolbar__hint">اختر نوع العرض: <strong>المشكلة + الحل التقني</strong> أو <strong>الهدف + ما قمنا به</strong></p>
-        <button type="button" class="adm-btn adm-btn--gold adm-btn--sm">
+        <a href="{{ route('admin.case-studies.create') }}" class="adm-btn adm-btn--gold adm-btn--sm">
             <span class="material-symbols-outlined">add</span>
             دراسة حالة جديدة
-        </button>
+        </a>
     </div>
 
     <div class="adm-case-list">
@@ -89,10 +89,10 @@
                     </div>
 
                     <div class="adm-case-card__actions">
-                        <button type="button" class="adm-btn adm-btn--ghost adm-btn--sm">
+                        <a href="{{ route('admin.case-studies.edit', $case['id']) }}" class="adm-btn adm-btn--ghost adm-btn--sm">
                             <span class="material-symbols-outlined">edit</span>
                             تعديل
-                        </button>
+                        </a>
                         <a href="{{ route('projects') }}#case-studies" class="adm-btn adm-btn--ghost adm-btn--sm" target="_blank">
                             <span class="material-symbols-outlined">visibility</span>
                             معاينة

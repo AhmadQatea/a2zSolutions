@@ -7,7 +7,7 @@
         <nav class="a2z-header__nav" aria-label="التنقل الرئيسي">
             @foreach (config('site.navigation') as $item)
                 @php
-                    $isActive = isset($item['route']) && $item['route'] && request()->routeIs($item['route']);
+                    $isActive = filled($item['route'] ?? null) && request()->routeIs($item['route']);
                 @endphp
                 <a
                     href="{{ $item['href'] }}"
@@ -73,7 +73,7 @@
         <ul class="a2z-mobile-nav__links">
             @foreach (config('site.navigation') as $item)
                 @php
-                    $isActive = isset($item['route']) && $item['route'] && request()->routeIs($item['route']);
+                    $isActive = filled($item['route'] ?? null) && request()->routeIs($item['route']);
                 @endphp
                 <li class="a2z-mobile-nav__item">
                     <a

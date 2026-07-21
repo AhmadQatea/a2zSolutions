@@ -46,7 +46,8 @@ return [
         ['label' => 'الرئيسية', 'route' => 'home', 'href' => '/'],
         ['label' => 'الخدمات', 'route' => 'services', 'href' => '/services'],
         ['label' => 'الأعمال ودراسة الحالة', 'route' => 'projects', 'href' => '/projects'],
-        ['label' => 'عن الشركة', 'route' => 'knowledge', 'href' => '/knowledge#about'],
+        // Fragment-only: do not set route (avoids dual-active with مركز المعرفة)
+        ['label' => 'عن الشركة', 'route' => null, 'href' => '/knowledge#about'],
         ['label' => 'مركز المعرفة', 'route' => 'knowledge', 'href' => '/knowledge'],
         ['label' => 'تواصل معنا', 'route' => 'contact', 'href' => '/contact'],
     ],

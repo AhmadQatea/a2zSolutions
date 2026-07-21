@@ -29,10 +29,18 @@
                     <h3 class="adm-panel__title">{{ $page['title'] }}</h3>
                     <span class="adm-panel__subtitle">آخر تحديث: {{ $page['updated_at'] }}</span>
                 </div>
-                <a href="{{ route('legal.show', $page['slug']) }}" class="adm-btn adm-btn--outline adm-btn--sm" target="_blank">
-                    <span class="material-symbols-outlined">visibility</span>
-                    معاينة
-                </a>
+                <div class="adm-form-actions">
+                    @if (isset($page['id']))
+                        <a href="{{ route('admin.legal.edit', $page['slug']) }}" class="adm-btn adm-btn--gold adm-btn--sm">
+                            <span class="material-symbols-outlined">edit</span>
+                            تعديل
+                        </a>
+                    @endif
+                    <a href="{{ route('legal.show', $page['slug']) }}" class="adm-btn adm-btn--outline adm-btn--sm" target="_blank">
+                        <span class="material-symbols-outlined">visibility</span>
+                        معاينة
+                    </a>
+                </div>
             </div>
 
             <label class="adm-field adm-field--full">

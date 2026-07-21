@@ -25,13 +25,21 @@
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
+.a2z-service-card__head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
 .a2z-service-card__icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     width: 56px;
     height: 56px;
-    margin-bottom: 24px;
+    margin: 0;
     border-radius: var(--a2z-radius-md);
     font-size: 30px;
     transition: transform var(--a2z-transition);
@@ -64,9 +72,9 @@
 }
 
 .a2z-service-card__title {
-    margin: 0 0 12px;
+    margin: 0;
     font-size: 24px;
-    line-height: 32px;
+    line-height: 1.35;
     font-weight: 500;
     color: var(--a2z-brand-navy);
 }
@@ -127,17 +135,20 @@
     color: var(--a2z-white);
 }
 
+.a2z-service-card--swiper .a2z-service-card__head {
+    margin-bottom: 12px;
+    gap: 12px;
+}
+
 .a2z-service-card--swiper .a2z-service-card__icon {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 14px;
-    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
 }
 
 .a2z-service-card--swiper .a2z-service-card__title {
-    margin-bottom: 8px;
-    font-size: 17px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 1.35;
 }
 
 .a2z-service-card--swiper .a2z-service-card__description {

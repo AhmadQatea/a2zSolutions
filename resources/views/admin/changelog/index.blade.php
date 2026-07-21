@@ -7,10 +7,10 @@
 
 @section('content')
     <div class="adm-toolbar">
-        <button type="button" class="adm-btn adm-btn--gold adm-btn--sm">
+        <a href="{{ route('admin.changelog.create') }}" class="adm-btn adm-btn--gold adm-btn--sm">
             <span class="material-symbols-outlined">add</span>
             إضافة تحديث
-        </button>
+        </a>
     </div>
 
     <div class="adm-changelog">
@@ -41,10 +41,12 @@
 
                 <div class="adm-changelog-item__footer">
                     <span><span class="material-symbols-outlined">person</span> {{ $item['author'] }}</span>
-                    <button type="button" class="adm-btn adm-btn--ghost adm-btn--sm">
-                        <span class="material-symbols-outlined">edit</span>
-                        تعديل
-                    </button>
+                    @if (isset($item['id']))
+                        <a href="{{ route('admin.changelog.edit', $item['id']) }}" class="adm-btn adm-btn--ghost adm-btn--sm">
+                            <span class="material-symbols-outlined">edit</span>
+                            تعديل
+                        </a>
+                    @endif
                 </div>
             </article>
         @endforeach

@@ -20,10 +20,10 @@
             <span class="material-symbols-outlined">search</span>
             <input type="search" placeholder="بحث في الخدمات..." class="adm-search__input" data-adm-search="services">
         </div>
-        <button type="button" class="adm-btn adm-btn--gold adm-btn--sm">
+        <a href="{{ route('admin.services.create') }}" class="adm-btn adm-btn--gold adm-btn--sm">
             <span class="material-symbols-outlined">add</span>
             إضافة خدمة
-        </button>
+        </a>
     </div>
 
     <div class="adm-services-grid" data-adm-list="services">
@@ -42,10 +42,10 @@
                 <p class="adm-service-card__desc">{{ $service['description'] }}</p>
 
                 <div class="adm-service-card__actions">
-                    <button type="button" class="adm-btn adm-btn--ghost adm-btn--sm">
+                    <a href="{{ route('admin.services.edit', $service['id']) }}" class="adm-btn adm-btn--ghost adm-btn--sm">
                         <span class="material-symbols-outlined">edit</span>
                         تعديل
-                    </button>
+                    </a>
                     <a href="{{ route('services') }}" class="adm-btn adm-btn--ghost adm-btn--sm" target="_blank">
                         <span class="material-symbols-outlined">visibility</span>
                         معاينة

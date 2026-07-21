@@ -2,13 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Admin\Concerns\ClearsCmsCache;
+use App\Http\Controllers\Admin\Concerns\ParsesLineLists;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\StoreProjectRequest;
+use App\Http\Requests\Admin\UpdateProjectRequest;
 use App\Models\Project;
 use App\Models\Service;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class ProjectController extends Controller
 {
+    use ClearsCmsCache;
+    use ParsesLineLists;
+
     public function index(): View
     {
         $projects = Project::query()
@@ -34,6 +42,7 @@ class ProjectController extends Controller
             'featuredCount' => $featuredCount,
             'featuredLimit' => $featuredLimit,
             'projects' => $projects->map(fn (Project $project): array => [
+                'id' => $project->id,
                 'service_type' => $project->service?->slug ?? 'all',
                 'featured' => $project->is_featured,
                 'image' => $project->imageUrl(),
@@ -43,5 +52,68 @@ class ProjectController extends Controller
                 'description' => $project->description,
             ]),
         ]);
+    }
+
+    public function create(): View
+    {
+        return view('admin.projects.create', [
+            'project' => new Project,
+            'services' => $this->serviceOptions(),
+        ]);
+    }
+
+    public function store(StoreProjectRequest $request): RedirectResponse
+    {
+        $data = $request->validated();
+
+        $project = new Project($data);
+        $project->tags = $this->linesToArray($data['tags'] ?? null);
+        $project->is_featured = $request->boolean('is_featured');
+        $project->is_published = $request->boolean('is_published');
+        $project->save();
+
+        $this->clearCmsCache();
+
+        return redirect()->route('admin.projects')->with('status', 'تم إضافة المشروع بنجاح.');
+    }
+
+    public function edit(Project $project): View
+    {
+        return view('admin.projects.edit', [
+            'project' => $project,
+            'services' => $this->serviceOptions(),
+        ]);
+    }
+
+    public function update(UpdateProjectRequest $request, Project $project): RedirectResponse
+    {
+        $data = $request->validated();
+
+        $project->fill($data);
+        $project->tags = $this->linesToArray($data['tags'] ?? null);
+        $project->is_featured = $request->boolean('is_featured');
+        $project->is_published = $request->boolean('is_published');
+        $project->save();
+
+        $this->clearCmsCache();
+
+        return redirect()->route('admin.projects')->with('status', 'تم تحديث المشروع بنجاح.');
+    }
+
+    public function destroy(Project $project): RedirectResponse
+    {
+        $project->delete();
+
+        $this->clearCmsCache();
+
+        return redirect()->route('admin.projects')->with('status', 'تم حذف المشروع بنجاح.');
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    private function serviceOptions(): array
+    {
+        return Service::query()->ordered()->pluck('title', 'id')->all();
     }
 }

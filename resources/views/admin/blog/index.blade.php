@@ -20,10 +20,10 @@
             <span class="material-symbols-outlined">search</span>
             <input type="search" placeholder="بحث في المقالات..." class="adm-search__input" data-adm-search="blog">
         </div>
-        <button type="button" class="adm-btn adm-btn--gold adm-btn--sm">
+        <a href="{{ route('admin.blog.create') }}" class="adm-btn adm-btn--gold adm-btn--sm">
             <span class="material-symbols-outlined">add</span>
             مقال جديد
-        </button>
+        </a>
     </div>
 
     <div class="adm-blog-list" data-adm-list="blog">
@@ -42,10 +42,10 @@
                     <h3>{{ $post['title'] }}</h3>
                     <p>{{ $post['excerpt'] }}</p>
                     <div class="adm-blog-card__actions">
-                        <button type="button" class="adm-btn adm-btn--ghost adm-btn--sm">
+                        <a href="{{ route('admin.blog.edit', $post['id']) }}" class="adm-btn adm-btn--ghost adm-btn--sm">
                             <span class="material-symbols-outlined">edit</span>
                             تعديل
-                        </button>
+                        </a>
                         <a href="{{ route('knowledge') }}#blog" class="adm-btn adm-btn--ghost adm-btn--sm" target="_blank">
                             <span class="material-symbols-outlined">visibility</span>
                             معاينة

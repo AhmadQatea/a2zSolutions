@@ -153,8 +153,8 @@ function initFaqAccordion() {
 function initServicesSwiper(root) {
     const track = root.querySelector('[data-services-track]');
     const slides = Array.from(root.querySelectorAll('[data-services-slide]'));
-    const prevButton = root.querySelector('[data-services-prev]');
-    const nextButton = root.querySelector('[data-services-next]');
+    const prevButtons = Array.from(root.querySelectorAll('[data-services-prev]'));
+    const nextButtons = Array.from(root.querySelectorAll('[data-services-next]'));
     const dots = Array.from(root.querySelectorAll('[data-services-dot]'));
     const totalSlides = slides.length;
 
@@ -220,14 +220,18 @@ function initServicesSwiper(root) {
         }
     };
 
-    prevButton?.addEventListener('click', () => {
-        prev();
-        startAutoplay();
+    prevButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            prev();
+            startAutoplay();
+        });
     });
 
-    nextButton?.addEventListener('click', () => {
-        next();
-        startAutoplay();
+    nextButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            next();
+            startAutoplay();
+        });
     });
 
     dots.forEach((dot) => {

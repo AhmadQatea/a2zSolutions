@@ -22,10 +22,10 @@
                 <small>{{ config('admin.projects.completion_trend') }}</small>
             </div>
         </div>
-        <button type="button" class="adm-btn adm-btn--gold adm-btn--sm">
+        <a href="{{ route('admin.projects.create') }}" class="adm-btn adm-btn--gold adm-btn--sm">
             <span class="material-symbols-outlined">add</span>
             مشروع جديد
-        </button>
+        </a>
     </div>
 
     <div class="adm-filters" data-adm-filters>
@@ -79,10 +79,10 @@
                             <span class="material-symbols-outlined">star</span>
                             <span data-adm-featured-label>{{ $isFeatured ? 'مميز' : 'تمييز' }}</span>
                         </button>
-                        <button type="button" class="adm-btn adm-btn--ghost adm-btn--sm">
+                        <a href="{{ route('admin.projects.edit', $project['id']) }}" class="adm-btn adm-btn--ghost adm-btn--sm">
                             <span class="material-symbols-outlined">edit</span>
                             تعديل
-                        </button>
+                        </a>
                         <a href="{{ route('admin.case-studies') }}" class="adm-btn adm-btn--ghost adm-btn--sm">
                             <span class="material-symbols-outlined">analytics</span>
                             دراسة حالة
