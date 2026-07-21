@@ -3,7 +3,8 @@
    -------------------------------------------------------------------------- */
 
 html {
-    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100%;
     scroll-behavior: smooth;
 }
 
@@ -11,6 +12,8 @@ body.a2z-body {
     margin: 0;
     position: relative;
     width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
     font-family: var(--a2z-font);
     background-color: var(--a2z-background);
     color: var(--a2z-on-surface);

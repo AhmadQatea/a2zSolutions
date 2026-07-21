@@ -5,10 +5,10 @@
 @media (max-width: 767px) {
     :root {
         --a2z-header-height: 60px;
-        --a2z-margin-mobile: 14px;
-        --a2z-gutter: 16px;
-        --a2z-section-pad-y: 48px;
-        --a2z-section-gap: 36px;
+        --a2z-margin-mobile: 12px;
+        --a2z-gutter: 14px;
+        --a2z-section-pad-y: 44px;
+        --a2z-section-gap: 28px;
     }
 
     .a2z-scroll-progress {
@@ -35,9 +35,13 @@
     }
 
     .a2z-services,
-    .a2z-why,
     .a2z-projects {
         padding: var(--a2z-section-pad-y) 0;
+    }
+
+    .a2z-why {
+        padding: 48px 0;
+        border-radius: 0;
     }
 
     .a2z-cta {
@@ -74,9 +78,9 @@
     }
 
     .a2z-hero {
-        margin-top: -12px;
-        padding: 18px 0;
-        border-radius: var(--a2z-radius-lg);
+        margin-top: 0;
+        padding: 20px 0;
+        border-radius: 0;
     }
 
     .a2z-hero__content {
@@ -123,8 +127,16 @@
     }
 
     .a2z-why__stat-large-value {
-        font-size: 32px;
-        line-height: 1.2;
+        font-size: 36px;
+        line-height: 1.15;
+    }
+
+    .a2z-why__stats,
+    .a2z-why__stats-small,
+    .a2z-why__stat-large,
+    .a2z-why__stat-small {
+        width: 100%;
+        max-width: 100%;
     }
 
     .services-hero,

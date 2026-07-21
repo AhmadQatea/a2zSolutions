@@ -1,24 +1,24 @@
 ﻿@php($section = config('site.why_choose_us'))
 
 <section id="about" class="a2z-why">
-    <div class="a2z-container">
-        <div class="a2z-why__grid">
-            <div class="a2z-why__content">
-                <h2 class="a2z-why__title">{{ $section['title'] }}</h2>
-                <p class="a2z-why__description">{{ $section['description'] }}</p>
+    <div class="a2z-container a2z-why__inner">
+        <div class="a2z-why__content">
+            <h2 class="a2z-why__title">{{ $section['title'] }}</h2>
+            <p class="a2z-why__description">{{ $section['description'] }}</p>
 
-                <div class="a2z-why__features">
-                    @foreach ($section['features'] as $feature)
-                        <x-ui.feature-item
-                            :icon="$feature['icon']"
-                            :icon-color="$feature['icon_color']"
-                            :title="$feature['title']"
-                            :description="$feature['description']"
-                        />
-                    @endforeach
-                </div>
+            <div class="a2z-why__features">
+                @foreach ($section['features'] as $feature)
+                    <x-ui.feature-item
+                        :icon="$feature['icon']"
+                        :icon-color="$feature['icon_color']"
+                        :title="$feature['title']"
+                        :description="$feature['description']"
+                    />
+                @endforeach
             </div>
+        </div>
 
+        <div class="a2z-why__stats">
             @foreach ($section['stats'] as $stat)
                 @if ($stat['type'] === 'large')
                     <div class="a2z-why__stat-large">

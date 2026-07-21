@@ -17,6 +17,7 @@
     margin-right: auto;
     padding-left: var(--a2z-margin-mobile);
     padding-right: var(--a2z-margin-mobile);
+    box-sizing: border-box;
 }
 
 .a2z-container--padded {
