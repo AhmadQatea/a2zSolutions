@@ -116,7 +116,15 @@
     }
 
     .a2z-projects__header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
         margin-bottom: 36px;
+    }
+
+    .a2z-projects__header .a2z-btn {
+        width: 100%;
+        justify-content: center;
     }
 
     .a2z-project-card,

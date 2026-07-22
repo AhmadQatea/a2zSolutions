@@ -11,8 +11,35 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    gap: 24px;
     margin-bottom: 64px;
 }
+
+@media (max-width: 767px) {
+    .a2z-projects__header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        margin-bottom: 36px;
+    }
+
+    .a2z-projects__header .a2z-btn {
+        width: 100%;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .a2z-projects__title {
+        font-size: 24px;
+        line-height: 1.35;
+    }
+
+    .a2z-projects__description {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+}
+
 
 .a2z-projects__title {
     margin: 0;
