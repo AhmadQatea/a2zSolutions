@@ -28,17 +28,17 @@ return [
         [
             'label' => 'فيسبوك',
             'icon' => 'groups',
-            'href' => 'https://www.facebook.com/',
+            'href' => 'https://www.facebook.com/A2ZSolusions',
         ],
         [
             'label' => 'إنستغرام',
             'icon' => 'camera',
-            'href' => 'https://www.instagram.com/',
+            'href' => 'https://www.instagram.com/ahmadqatea/',
         ],
         [
             'label' => 'الموقع الإلكتروني',
             'icon' => 'web',
-            'href' => 'https://a2z-solutions.com/',
+            'href' => 'https://a2zsolutions-production-ycirs9.laravel.cloud/',
         ],
     ],
 
@@ -653,7 +653,7 @@ return [
                 'title' => 'تابعنا',
                 'value' => 'A2Z Solutions',
                 'note' => 'آخر التحديثات التقنية',
-                'href' => 'https://www.facebook.com/',
+                'href' => 'https://www.facebook.com/A2ZSolusions',
                 'border' => 'slate',
                 'external' => true,
             ],
