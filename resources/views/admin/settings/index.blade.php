@@ -82,11 +82,10 @@
                                 <span class="material-symbols-outlined">{{ $item['icon'] }}</span>
                             </div>
                             <div class="adm-social-item__info adm-form-grid" style="flex:1; grid-template-columns: 1fr 2fr; gap: 0.5rem;">
-                                @if (! empty($item['id']))
-                                    <input type="hidden" name="social[{{ $index }}][id]" value="{{ $item['id'] }}">
-                                @endif
-                                <input type="text" name="social[{{ $index }}][label]" class="adm-field__input adm-field__input--standalone" value="{{ old('social.'.$index.'.label', $item['label']) }}" placeholder="الاسم">
-                                <input type="text" name="social[{{ $index }}][href]" class="adm-field__input adm-field__input--standalone" value="{{ old('social.'.$index.'.href', $item['href']) }}" placeholder="الرابط">
+                                <input type="hidden" name="social[{{ $index }}][id]" value="{{ $item['id'] }}">
+                                <input type="hidden" name="social[{{ $index }}][icon]" value="{{ $item['icon'] }}">
+                                <input type="text" name="social[{{ $index }}][label]" class="adm-field__input adm-field__input--standalone" value="{{ old('social.'.$index.'.label', $item['label']) }}" placeholder="الاسم" required>
+                                <input type="text" name="social[{{ $index }}][href]" class="adm-field__input adm-field__input--standalone" value="{{ old('social.'.$index.'.href', $item['href']) }}" placeholder="https://..." required>
                             </div>
                         </div>
                     @endforeach

@@ -75,20 +75,54 @@ class SettingsController extends Controller
         SiteSetting::setValue('seo', 'services_meta', $data['seo_services_description']);
         SiteSetting::setValue('seo', 'projects_meta', $data['seo_projects_description']);
 
-        foreach ($data['social'] ?? [] as $index => $social) {
-            if (! empty($social['id'])) {
-                SocialLink::query()->whereKey($social['id'])->update([
-                    'label' => $social['label'],
-                    'href' => $social['href'],
-                    'sort_order' => $index + 1,
-                ]);
-            }
-        }
+        $this->syncSocialLinks($data['social'] ?? []);
 
         $this->clearCmsCache(['brand', 'contact', 'seo']);
 
         return redirect()
             ->route('admin.settings')
             ->with('status', 'تم حفظ الإعدادات بنجاح.');
+    }
+
+    /**
+     * @param  list<array{id?: int|null, label: string, href: string, icon?: string|null}>  $socialItems
+     */
+    private function syncSocialLinks(array $socialItems): void
+    {
+        $orderedExisting = SocialLink::query()->ordered()->get()->values();
+
+        foreach ($socialItems as $index => $social) {
+            $payload = [
+                'label' => $social['label'],
+                'href' => $social['href'],
+                'sort_order' => $index + 1,
+                'is_published' => true,
+            ];
+
+            if (! empty($social['icon'])) {
+                $payload['icon'] = $social['icon'];
+            }
+
+            $id = $social['id'] ?? null;
+
+            if (! empty($id)) {
+                SocialLink::query()->whereKey($id)->update($payload);
+
+                continue;
+            }
+
+            $byPosition = $orderedExisting->get($index);
+
+            if ($byPosition instanceof SocialLink) {
+                $byPosition->update($payload);
+
+                continue;
+            }
+
+            SocialLink::query()->create([
+                ...$payload,
+                'icon' => $social['icon'] ?? (config('site.social.'.$index.'.icon') ?? 'link'),
+            ]);
+        }
     }
 }

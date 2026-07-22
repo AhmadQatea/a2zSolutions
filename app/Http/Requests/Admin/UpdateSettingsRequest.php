@@ -29,8 +29,9 @@ class UpdateSettingsRequest extends FormRequest
             'seo_projects_description' => ['nullable', 'string', 'max:1000'],
             'social' => ['nullable', 'array'],
             'social.*.id' => ['nullable', 'integer', 'exists:social_links,id'],
-            'social.*.label' => ['required_with:social', 'string', 'max:80'],
-            'social.*.href' => ['required_with:social', 'string', 'max:255'],
+            'social.*.icon' => ['nullable', 'string', 'max:80'],
+            'social.*.label' => ['required', 'string', 'max:80'],
+            'social.*.href' => ['required', 'string', 'max:500'],
         ];
     }
 }
