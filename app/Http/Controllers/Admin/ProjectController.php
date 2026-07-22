@@ -109,6 +109,19 @@ class ProjectController extends Controller
         return redirect()->route('admin.projects')->with('status', 'تم حذف المشروع بنجاح.');
     }
 
+    public function toggleFeatured(Project $project): RedirectResponse
+    {
+        $project->update([
+            'is_featured' => ! $project->is_featured,
+        ]);
+
+        $this->clearCmsCache();
+
+        return redirect()
+            ->route('admin.projects')
+            ->with('status', $project->is_featured ? 'تم تمييز المشروع.' : 'تم إلغاء تمييز المشروع.');
+    }
+
     /**
      * @return array<int, string>
      */

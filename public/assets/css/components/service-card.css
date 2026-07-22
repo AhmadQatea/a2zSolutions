@@ -111,24 +111,25 @@
         0 6px 14px rgba(15, 23, 42, 0.05);
 }
 
+/* Desktop active state keeps same light card color (no dark flip) */
 .a2z-services-swiper__slide--active .a2z-service-card--swiper {
-    background: var(--a2z-brand-slate);
-    border-color: rgba(255, 255, 255, 0.14);
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: auto;
-    text-rendering: optimizeLegibility;
+    background: var(--a2z-white);
+    border-color: rgba(14, 165, 183, 0.45);
+    box-shadow:
+        0 18px 36px rgba(14, 165, 183, 0.16),
+        0 8px 18px rgba(15, 23, 42, 0.08);
 }
 
 .a2z-services-swiper__slide--active .a2z-service-card__title {
-    color: var(--a2z-white);
+    color: var(--a2z-brand-navy);
 }
 
 .a2z-services-swiper__slide--active .a2z-service-card__description {
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--a2z-on-surface-variant);
 }
 
 .a2z-services-swiper__slide--active .a2z-service-card__icon--navy {
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--a2z-brand-navy);
 }
 
 .a2z-services-swiper__slide--active .a2z-service-card__icon--navy .a2z-icon {

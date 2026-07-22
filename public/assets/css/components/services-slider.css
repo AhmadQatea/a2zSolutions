@@ -133,23 +133,27 @@
 }
 
 .a2z-services-swiper__dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     padding: 0;
-    border: none;
+    border: 2px solid rgba(15, 23, 42, 0.28);
     border-radius: 50%;
-    background: rgba(15, 23, 42, 0.22);
+    background: transparent;
     cursor: pointer;
     transition:
         transform var(--a2z-transition),
         background var(--a2z-transition),
-        width var(--a2z-transition);
+        border-color var(--a2z-transition),
+        width var(--a2z-transition),
+        box-shadow var(--a2z-transition);
 }
 
 .a2z-services-swiper__dot--active {
-    width: 22px;
+    width: 28px;
     border-radius: 999px;
+    border-color: var(--a2z-brand-teal);
     background: var(--a2z-brand-teal);
+    box-shadow: 0 0 0 4px rgba(14, 165, 183, 0.2);
 }
 
 .a2z-services-swiper__dot:focus-visible {

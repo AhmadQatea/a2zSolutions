@@ -45,4 +45,14 @@ class SiteSetting extends Model
     {
         Cache::forget("site_settings.{$group}");
     }
+
+    public static function setValue(string $group, string $key, ?string $value): void
+    {
+        self::query()->updateOrCreate(
+            ['group' => $group, 'key' => $key],
+            ['value' => $value]
+        );
+
+        self::forgetGroupCache($group);
+    }
 }

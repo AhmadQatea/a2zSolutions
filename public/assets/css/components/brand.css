@@ -3,20 +3,27 @@
    -------------------------------------------------------------------------- */
 
 .a2z-brand {
-    display: inline-block;
+    display: inline-flex;
+    align-items: baseline;
     direction: ltr;
     unicode-bidi: isolate;
     font-weight: inherit;
     font-size: inherit;
-    line-height: inherit;
+    line-height: 1.25;
+    overflow: visible;
+    padding-block: 0.12em 0.08em;
 }
 
 .a2z-brand__letter {
     display: inline-block;
+    line-height: 1.25;
+    padding-block: 0.06em;
+    overflow: visible;
 }
 
 .a2z-brand__middle {
     color: var(--a2z-brand-slate);
+    line-height: 1.25;
 }
 
 .a2z-footer .a2z-brand__middle {

@@ -74,7 +74,7 @@ function initPageSkeleton() {
         return;
     }
 
-    const minVisibleMs = 550;
+    const minVisibleMs = 80;
     const startedAt = Date.now();
 
     const reveal = () => {
@@ -83,10 +83,7 @@ function initPageSkeleton() {
 
         window.setTimeout(() => {
             page.classList.add('adm-page--ready');
-
-            window.setTimeout(() => {
-                page.classList.add('adm-page--skeleton-done');
-            }, 380);
+            page.classList.add('adm-page--skeleton-done');
         }, delay);
     };
 

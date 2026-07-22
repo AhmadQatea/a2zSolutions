@@ -1,8 +1,71 @@
 /* --------------------------------------------------------------------------
-   Home — Services section
+   Home services — mobile bento + desktop swiper
    -------------------------------------------------------------------------- */
 
 .a2z-services {
     padding: 96px 0;
     background: var(--a2z-white);
+}
+
+.a2z-services-bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.a2z-services-bento__card {
+    padding: 18px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(198, 198, 205, 0.35);
+    background: var(--a2z-surface-container-low);
+}
+
+.a2z-services-bento__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.a2z-services-bento__head .a2z-service-card__icon {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+}
+
+.a2z-services-bento__title {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--a2z-brand-navy);
+}
+
+.a2z-services-bento__desc {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--a2z-on-surface-variant);
+}
+
+.a2z-services-swiper-wrap {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .a2z-services-bento {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+}
+
+@media (min-width: 900px) {
+    .a2z-services-bento {
+        display: none;
+    }
+
+    .a2z-services-swiper-wrap {
+        display: block;
+    }
 }

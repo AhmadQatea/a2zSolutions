@@ -52,14 +52,24 @@
                 <p class="adm-message-card__body">{{ $message['message'] }}</p>
 
                 <div class="adm-message-card__actions">
-                    <button type="button" class="adm-btn adm-btn--ghost adm-btn--sm">
-                        <span class="material-symbols-outlined">reply</span>
-                        رد
-                    </button>
-                    <button type="button" class="adm-btn adm-btn--ghost adm-btn--sm">
-                        <span class="material-symbols-outlined">archive</span>
-                        أرشفة
-                    </button>
+                    <form method="post" action="{{ route('admin.communications.status', $message['id']) }}">
+                        @csrf
+                        @method('PATCH')
+                        <input type="hidden" name="status" value="replied">
+                        <button type="submit" class="adm-btn adm-btn--ghost adm-btn--sm">
+                            <span class="material-symbols-outlined">reply</span>
+                            تم الرد
+                        </button>
+                    </form>
+                    <form method="post" action="{{ route('admin.communications.status', $message['id']) }}">
+                        @csrf
+                        @method('PATCH')
+                        <input type="hidden" name="status" value="archived">
+                        <button type="submit" class="adm-btn adm-btn--ghost adm-btn--sm">
+                            <span class="material-symbols-outlined">archive</span>
+                            أرشفة
+                        </button>
+                    </form>
                     <a href="mailto:{{ $message['email'] }}" class="adm-btn adm-btn--ghost adm-btn--sm">
                         <span class="material-symbols-outlined">mail</span>
                         بريد

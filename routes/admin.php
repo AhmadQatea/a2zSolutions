@@ -21,7 +21,9 @@ Route::prefix('admin')->name('admin.')->group(function (): void {
     Route::middleware('admin.auth')->group(function (): void {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/communications', [CommunicationController::class, 'index'])->name('communications');
+        Route::patch('/communications/{communication}/status', [CommunicationController::class, 'updateStatus'])->name('communications.status');
         Route::get('/bookings', [BookingController::class, 'index'])->name('bookings');
+        Route::patch('/bookings/{booking}/status', [BookingController::class, 'updateStatus'])->name('bookings.status');
 
         Route::get('/services', [ServiceController::class, 'index'])->name('services');
         Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
@@ -35,6 +37,7 @@ Route::prefix('admin')->name('admin.')->group(function (): void {
         Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
         Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
         Route::put('/projects/{project}', [ProjectController::class, 'update'])->name('projects.update');
+        Route::patch('/projects/{project}/featured', [ProjectController::class, 'toggleFeatured'])->name('projects.featured');
         Route::delete('/projects/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
 
         Route::get('/case-studies', [CaseStudyController::class, 'index'])->name('case-studies');
@@ -63,5 +66,6 @@ Route::prefix('admin')->name('admin.')->group(function (): void {
         Route::delete('/changelog/{changelog_entry}', [ChangelogController::class, 'destroy'])->name('changelog.destroy');
 
         Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
+        Route::put('/settings', [SettingsController::class, 'update'])->name('settings.update');
     });
 });

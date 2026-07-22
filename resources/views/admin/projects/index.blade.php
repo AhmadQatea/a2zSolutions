@@ -69,16 +69,19 @@
                     <p>{{ $project['description'] }}</p>
 
                     <div class="adm-project-card__actions">
-                        <button
-                            type="button"
-                            class="adm-featured-toggle {{ $isFeatured ? 'is-active' : '' }}"
-                            data-adm-featured-toggle
-                            aria-pressed="{{ $isFeatured ? 'true' : 'false' }}"
-                            title="عرض في الصفحة الرئيسية"
-                        >
-                            <span class="material-symbols-outlined">star</span>
-                            <span data-adm-featured-label>{{ $isFeatured ? 'مميز' : 'تمييز' }}</span>
-                        </button>
+                        <form method="post" action="{{ route('admin.projects.featured', $project['id']) }}">
+                            @csrf
+                            @method('PATCH')
+                            <button
+                                type="submit"
+                                class="adm-featured-toggle {{ $isFeatured ? 'is-active' : '' }}"
+                                aria-pressed="{{ $isFeatured ? 'true' : 'false' }}"
+                                title="عرض في الصفحة الرئيسية"
+                            >
+                                <span class="material-symbols-outlined">star</span>
+                                <span>{{ $isFeatured ? 'مميز' : 'تمييز' }}</span>
+                            </button>
+                        </form>
                         <a href="{{ route('admin.projects.edit', $project['id']) }}" class="adm-btn adm-btn--ghost adm-btn--sm">
                             <span class="material-symbols-outlined">edit</span>
                             تعديل

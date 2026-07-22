@@ -6,6 +6,9 @@ use App\Enums\ConsultationBookingStatus;
 use App\Http\Controllers\Controller;
 use App\Models\BookingSlot;
 use App\Models\ConsultationBooking;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 class BookingController extends Controller
@@ -48,16 +51,33 @@ class BookingController extends Controller
                 ->values()
                 ->all(),
             'items' => $bookings->map(fn (ConsultationBooking $booking): array => [
+                'id' => $booking->id,
                 'client' => $booking->client_name,
                 'email' => $booking->email,
                 'phone' => $booking->phone ?? '—',
                 'date' => $booking->booking_date->translatedFormat('d F Y'),
                 'time' => $booking->time_label,
                 'status' => $booking->status->label(),
+                'status_value' => $booking->status->value,
                 'status_variant' => $this->statusVariant($booking->status),
                 'note' => $booking->note ?? '—',
             ]),
         ]);
+    }
+
+    public function updateStatus(Request $request, ConsultationBooking $booking): RedirectResponse
+    {
+        $validated = $request->validate([
+            'status' => ['required', Rule::enum(ConsultationBookingStatus::class)],
+        ]);
+
+        $booking->update([
+            'status' => ConsultationBookingStatus::from($validated['status']),
+        ]);
+
+        return redirect()
+            ->route('admin.bookings')
+            ->with('status', 'تم تحديث حالة الحجز.');
     }
 
     private function statusVariant(ConsultationBookingStatus $status): string

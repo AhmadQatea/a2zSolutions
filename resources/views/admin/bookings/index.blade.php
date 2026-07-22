@@ -62,10 +62,6 @@
         <section class="adm-panel adm-panel--inner-glow">
             <div class="adm-panel__header">
                 <h3 class="adm-panel__title">الحجوزات القادمة</h3>
-                <button type="button" class="adm-btn adm-btn--gold adm-btn--sm">
-                    <span class="material-symbols-outlined">add</span>
-                    حجز يدوي
-                </button>
             </div>
 
             <div class="adm-bookings-list">
@@ -80,7 +76,30 @@
                             <span>{{ $booking['note'] }}</span>
                             <small>{{ $booking['email'] }} • {{ $booking['phone'] }}</small>
                         </div>
-                        <x-admin.status-badge :variant="$booking['status_variant']">{{ $booking['status'] }}</x-admin.status-badge>
+                        <div class="adm-booking-item__actions">
+                            <x-admin.status-badge :variant="$booking['status_variant']">{{ $booking['status'] }}</x-admin.status-badge>
+                            @if ($booking['status_value'] === 'pending')
+                                <form method="post" action="{{ route('admin.bookings.status', $booking['id']) }}">
+                                    @csrf
+                                    @method('PATCH')
+                                    <input type="hidden" name="status" value="confirmed">
+                                    <button type="submit" class="adm-btn adm-btn--ghost adm-btn--sm">تأكيد</button>
+                                </form>
+                                <form method="post" action="{{ route('admin.bookings.status', $booking['id']) }}">
+                                    @csrf
+                                    @method('PATCH')
+                                    <input type="hidden" name="status" value="cancelled">
+                                    <button type="submit" class="adm-btn adm-btn--ghost adm-btn--sm">إلغاء</button>
+                                </form>
+                            @elseif ($booking['status_value'] === 'confirmed')
+                                <form method="post" action="{{ route('admin.bookings.status', $booking['id']) }}">
+                                    @csrf
+                                    @method('PATCH')
+                                    <input type="hidden" name="status" value="completed">
+                                    <button type="submit" class="adm-btn adm-btn--ghost adm-btn--sm">إكمال</button>
+                                </form>
+                            @endif
+                        </div>
                     </div>
                 @empty
                     <p>لا توجد حجوزات مسجلة.</p>
