@@ -253,7 +253,7 @@
                         </button>
                         <a
                             href="{{ $whatsappBase }}"
-                            class="contact-booking__whatsapp a2z-btn a2z-btn--outline"
+                            class="contact-booking__whatsapp a2z-btn a2z-btn--outline-teal"
                             data-booking-confirm
                             target="_blank"
                             rel="noopener noreferrer"

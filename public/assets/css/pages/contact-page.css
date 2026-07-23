@@ -470,10 +470,32 @@
     border-color: var(--a2z-brand-slate);
 }
 
+.contact-booking__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+}
+
 .contact-booking__confirm {
     width: 100%;
     justify-content: center;
     gap: 8px;
+}
+
+.contact-booking__whatsapp {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(14, 165, 183, 0.08);
+    border: 1px solid var(--a2z-brand-teal);
+    color: var(--a2z-brand-navy);
+}
+
+.contact-booking__whatsapp:hover {
+    background: var(--a2z-brand-teal);
+    border-color: var(--a2z-brand-teal);
+    color: var(--a2z-white);
 }
 
 /* Map */
